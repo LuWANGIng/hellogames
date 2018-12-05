@@ -6,5 +6,8 @@ import retrofit2.http.Query
 
 interface Webservice {
     @GET("game/list")
-    fun listToDos(@Query("userId") userId :Int):Call<List<Game>>
+    fun listToDos():Call<List<Game>>
+
+    @GET("game/details")
+    fun details(@Query("game_id") game_id: Int): Call<Gamedetails>
 }
